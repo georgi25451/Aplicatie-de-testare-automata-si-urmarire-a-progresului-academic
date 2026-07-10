@@ -1,0 +1,444 @@
+* { box-sizing: border-box; }
+
+.td-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+  color: #1e293b;
+}
+
+.td-main {
+  flex: 1;
+  margin-left: 220px;
+  padding: 28px 32px 60px;
+  min-height: 100vh;
+}
+
+/* ---- HEADER ---- */
+.td-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.td-back-btn:hover {
+  background: #f1f5f9;
+  color: #1e3a5f;
+  border-color: #1e3a5f;
+}
+
+.td-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.td-page-header h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.td-btn-add {
+  padding: 9px 18px;
+  background: #1e3a5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.td-btn-add:hover { background: #172d4a; }
+
+/* ---- INFO CARD ---- */
+.td-info-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.td-info-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+
+.td-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.td-tag-profil { background: #eff6ff; color: #1d4ed8; }
+.td-tag-usor { background: #f0fdf4; color: #166534; }
+.td-tag-mediu { background: #fffbeb; color: #92400e; }
+.td-tag-greu { background: #fef2f2; color: #991b1b; }
+.td-tag-count { background: #f1f5f9; color: #475569; }
+
+/* ---- ERROR ---- */
+.td-error {
+  padding: 10px 14px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+/* ---- QUESTIONS LIST ---- */
+.td-loading {
+  padding: 40px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.td-empty {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 40px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.td-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.td-question-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.td-q-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.td-q-number {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  background: #1e3a5f;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.td-q-text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.td-q-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.td-action-btn {
+  padding: 5px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  color: #64748b;
+  transition: all 0.15s;
+}
+
+.td-action-btn:hover { border-color: #1e3a5f; color: #1e3a5f; }
+.td-action-btn.delete:hover { border-color: #dc2626; color: #dc2626; }
+
+.td-variants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.td-variant {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  background: #f8fafc;
+}
+
+.td-variant.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.td-variant-letter {
+  font-weight: 700;
+  font-size: 0.8rem;
+  min-width: 16px;
+  color: #64748b;
+}
+
+.td-variant.correct .td-variant-letter { color: #16a34a; }
+
+.td-variant-text {
+  font-size: 0.85rem;
+  color: #1e293b;
+}
+
+.td-correct-label {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #f0fdf4;
+  color: #166534;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.td-explanation {
+  font-size: 0.82rem;
+  color: #64748b;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  line-height: 1.5;
+}
+
+.td-explanation strong { color: #475569; }
+
+/* ---- MODAL FORM ---- */
+.td-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 200;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+
+.td-modal {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 580px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.td-modal-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 22px 0;
+}
+
+.td-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.td-modal-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.td-modal-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.td-modal-group input,
+.td-modal-group select,
+.td-modal-group textarea {
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #1e293b;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+  background: #ffffff;
+}
+
+.td-modal-group input:focus,
+.td-modal-group select:focus,
+.td-modal-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.td-modal-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.td-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.td-modal-error {
+  font-size: 0.85rem;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.td-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.td-modal-btn {
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  border: 1px solid transparent;
+}
+
+.td-modal-btn.primary { background: #1e3a5f; color: #ffffff; }
+.td-modal-btn.primary:hover { background: #172d4a; }
+.td-modal-btn.secondary { background: #ffffff; color: #64748b; border-color: #e2e8f0; }
+.td-modal-btn.secondary:hover { background: #f1f5f9; color: #1e293b; }
+
+/* ---- MATH GUIDE ---- */
+.td-math-guide-btn {
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.td-math-guide-btn:hover { border-color: #1e3a5f; color: #1e3a5f; }
+
+.td-math-guide {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.td-math-guide code {
+  background: #e2e8f0;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+/* ---- DELETE CONFIRM ---- */
+.td-delete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.td-delete-modal {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 28px 32px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.td-delete-modal h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+}
+
+.td-delete-modal p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 22px 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .td-main { margin-left: 0; padding: 20px 16px 40px; }
+  .td-modal-grid { grid-template-columns: 1fr; }
+  .td-variants { grid-template-columns: 1fr; }
+}

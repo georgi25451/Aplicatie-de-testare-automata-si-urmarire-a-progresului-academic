@@ -1,0 +1,21 @@
+.math-text-container {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: inherit;
+}
+
+/* We removed the inline-block and vertical-align: middle on spans 
+   because it breaks KaTeX's internal positioning of exponents. */
+
+/* Ensure block math has some spacing */
+.math-text-container .katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Fix for Safari and some browsers where math symbols might be too small */
+.katex {
+  font-size: 1.1em !important;
+}

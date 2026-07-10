@@ -1,0 +1,197 @@
+/* ── ScorBarChart ── */
+
+.score-chart-card {
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 24px 20px 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+/* ── Header ── */
+.chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.chart-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text, #1e293b);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.chart-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg, #f1f5f9);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 10px;
+  padding: 10px 18px;
+}
+
+.chart-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.chart-stat-num {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text, #1e293b);
+  line-height: 1;
+}
+
+.chart-stat-lbl {
+  font-size: 0.69rem;
+  color: var(--text-secondary, #64748b);
+  white-space: nowrap;
+}
+
+.chart-stat-sep {
+  width: 1px;
+  height: 30px;
+  background: var(--border, #e2e8f0);
+  flex-shrink: 0;
+}
+
+/* ── Chart scroll container ── */
+.chart-scroll-outer {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.chart-svg {
+  display: block;
+}
+
+/* ── Bar grow animation ── */
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes barLabelFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.chart-bar {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: barGrow 0.55s cubic-bezier(0.34, 1.1, 0.64, 1) both;
+  cursor: pointer;
+  transition: filter 0.18s ease;
+}
+
+.chart-bar:hover {
+  filter: brightness(1.22) saturate(1.08)
+    drop-shadow(0 3px 8px rgba(0, 0, 0, 0.22));
+}
+
+.bar-pct-label {
+  animation: barLabelFade 0.3s ease-out both;
+}
+
+/* ── Tooltip ── */
+.chart-tooltip {
+  position: fixed;
+  z-index: 9999;
+  background: #1e293b;
+  color: #fff;
+  border-radius: 10px;
+  padding: 11px 15px;
+  min-width: 155px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.82rem;
+}
+
+.tooltip-name {
+  font-weight: 600;
+  font-size: 0.84rem;
+  margin-bottom: 9px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 185px;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.68);
+  margin-top: 5px;
+}
+
+.tooltip-row strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Empty state ── */
+.chart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.chart-empty-icon {
+  width: 68px;
+  height: 68px;
+  background: var(--bg, #f1f5f9);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--text-muted, #94a3b8);
+}
+
+.chart-empty-state p {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #64748b);
+  max-width: 300px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .score-chart-card {
+    padding: 16px 12px 12px;
+  }
+  .chart-header {
+    flex-direction: column;
+  }
+  .chart-stats-row {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
